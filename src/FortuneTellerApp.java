@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class FortuneTellerApp {
 
+	private static final Object String = null;
+
 	public static void main(String[] args) throws InterruptedException {
 		
 		Scanner input = new Scanner(System.in);
@@ -18,6 +20,23 @@ public class FortuneTellerApp {
 		int age = input.nextInt();
 		System.out.println("You are " + age);
 		
+		System.out.println("Question two: What was your birth month? (1-12)");
+		int birthMonth = input.nextInt();
+		System.out.println("You were born on the " + birthMonth + " month.");
+		
+		System.out.println("Question three: What is your favorite color (ROYGBIV)? (Type 'help' for information on ROYGBIV)");
+		String color = input.next();
+		while (color.toLowerCase().equals("help") ) {
+			System.out.println("found help");
+			System.out.println("R is red\nO is orange\nY is yellow\nG is green\nB is blue\nV is violet");
+			System.out.println("So... what is your favorit color (ROYGBIV)?");
+			color = input.next();
+		}
+		System.out.println("Your favorte color is: " + color);
+		
+		System.out.println("Question four: How many siblings do you have?");
+		int siblings = input.nextInt();
+		System.out.println("You have " + siblings + " siblings.");
 		
 		input.close();
 		System.out.println("Goodbye, thanks for playing!");
