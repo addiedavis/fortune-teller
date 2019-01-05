@@ -49,7 +49,7 @@ public class FortuneTellerApp {
 		}
 
 		System.out.println(
-				"Question three: What is your favorite color? \n(answer in a single letter out of ROYGBIV) \n(Type 'help' for information on ROYGBIV)");
+				"Question three: What is your favorite color? \nanswer in a single letter out of ROYGBIV \n(Type 'help' for information on ROYGBIV)");
 		String color = input.next();
 		while (color.toLowerCase().equals("help")) {
 			System.out.println("found help");
