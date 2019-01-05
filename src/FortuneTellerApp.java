@@ -26,48 +26,63 @@ public class FortuneTellerApp {
 		} else {
 			retirement = 45;
 		}
-		//System.out.println("You are " + age);
+		// System.out.println("You are " + age);
 
 		System.out.println("Question two: What was your birth month? (1-12)");
 		int birthMonth = input.nextInt();
 		int accountAmount = 0;
-		System.out.println("You were born on the " + birthMonth + " month.");
 
 		if (birthMonth < 1) {
 			accountAmount = 0;
 		} else if (birthMonth < 5) {
-			//System.out.println("Jan. Feb. Mar. Apr.");
+			// System.out.println("Jan. Feb. Mar. Apr.");
 			accountAmount = 300000000;
 		} else if (birthMonth < 9) {
-			//System.out.println("May Jun. Jul. Aug.");
+			// System.out.println("May Jun. Jul. Aug.");
 			accountAmount = 100000;
 		} else if (birthMonth < 13) {
-			//System.out.println("Sep. Oct. Nov. Dec.");
+			// System.out.println("Sep. Oct. Nov. Dec.");
 			accountAmount = 90000;
 		} else {
-			//System.out.println("randome birthmonth text");
+			// System.out.println("randome birthmonth text");
 			accountAmount = 10;
 		}
-		
+
 		System.out.println(
-				"Question three: What is your favorite color (answer in a single letter out of ROYGBIV)? (Type 'help' for information on ROYGBIV)");
+				"Question three: What is your favorite color? \n(answer in a single letter out of ROYGBIV) \n(Type 'help' for information on ROYGBIV)");
 		String color = input.next();
 		while (color.toLowerCase().equals("help")) {
 			System.out.println("found help");
-			System.out.println("R is red\nO is orange\nY is yellow\nG is green\nB is blue\nV is violet");
+			System.out.println("R is red\nO is orange\nY is yellow\nG is green\nB is blue\nI is indigo\nV is violet");
 			System.out.println("So... what is your favorit color (ROYGBIV)?");
 			color = input.next();
 		}
+
+		if (color.toLowerCase().equals("r")) {
+			System.out.println("Picked red.");
+		} else if (color.toLowerCase().equals("o")) {
+			System.out.println("Picked orange");
+		} else if (color.toLowerCase().equals("y")) {
+			System.out.println("Picked yellow");
+		} else if (color.toLowerCase().equals("g")) {
+			System.out.println("Picked green");
+		} else if (color.toLowerCase().equals("b")) {
+			System.out.println("Picked blue");
+		} else if (color.toLowerCase().equals("i")) {
+			System.out.println("Picked indigo");
+		} else if (color.toLowerCase().equals("v")) {
+			System.out.println("Picked violoet");
+		}
+
 		System.out.println("Your favorte color is: " + color);
 
 		System.out.println("Question four: How many siblings do you have?");
 		int siblings = input.nextInt();
 		System.out.println("You have " + siblings + " siblings.");
 
-		
 		System.out.println("You will retire in " + retirement + " years.");
 		System.out.println("You will have $" + accountAmount + " in your banking account.");
-		
+
 		input.close();
 		System.out.println("Goodbye, thanks for playing!");
 		System.exit(0);
