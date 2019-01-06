@@ -7,6 +7,7 @@ public class FortuneTellerApp {
 	public static void main(String[] args) throws InterruptedException {
 
 		Scanner input = new Scanner(System.in);
+		
 		Thread.sleep(1000);
 		System.out.println("Hello, what is your first name?");
 		String nameFirst = input.next();
@@ -21,7 +22,9 @@ public class FortuneTellerApp {
 		System.out.println("Question one: How old are you?");
 		int age = input.nextInt();
 		int retirement = 0;
-		if (age % 2 == 0) {
+		if (age <= 0) {
+			retirement = 100;
+		} else if (age % 2 == 0) {
 			retirement = 33;
 		} else {
 			retirement = 45;
@@ -31,17 +34,14 @@ public class FortuneTellerApp {
 		int birthMonth = input.nextInt();
 		int accountAmount = 0;
 
-		if (birthMonth < 1) {
+		if (birthMonth < 1 || birthMonth > 12) {
 			accountAmount = 0;
 		} else if (birthMonth < 5) {
 			accountAmount = 300000000;
 		} else if (birthMonth < 9) {
 			accountAmount = 100000;
-		} else if (birthMonth < 13) {
-			accountAmount = 90000;
 		} else {
-			// System.out.println("randome birthmonth text");
-			accountAmount = 10;
+			accountAmount = 90000;
 		}
 
 		System.out.println(
@@ -60,31 +60,23 @@ public class FortuneTellerApp {
 		}
 
 		String transport = "nothing";
-		
+
 		if (color.toLowerCase().equals("r")) {
-			transport = "car";
-			System.out.println("Picked red. Drives a " + transport);
+			transport = "Lamborghini";
 		} else if (color.toLowerCase().equals("o")) {
-			transport = "truck";
-			System.out.println("Picked orange. Drives a " + transport);
+			transport = "Vespa";
 		} else if (color.toLowerCase().equals("y")) {
-			transport = "bus";
-			System.out.println("Picked yellow. Drives a " + transport);
+			transport = "Jeep";
 		} else if (color.toLowerCase().equals("g")) {
-			transport = "magic carpet";
-			System.out.println("Picked green. Drives a " + transport);
+			transport = "Triumph Scrambler";
 		} else if (color.toLowerCase().equals("b")) {
-			transport = "dog slead";
-			System.out.println("Picked blue. Drives a " + transport);
+			transport = "Honda Accord";
 		} else if (color.toLowerCase().equals("i")) {
-			transport = "boat";
-			System.out.println("Picked indigo. Drives a " + transport);
+			transport = "Public Transit";
 		} else if (color.toLowerCase().equals("v")) {
-			transport = "rocket"; 
-			System.out.println("Picked violoet. Drives a " + transport);
+			transport = "Walking";
 		} else {
-			transport = "ruddy sneakers";
-			System.out.println("refused to pick a color. uses " + transport + "to get around.");
+			transport = "the seat of you pants";
 		}
 
 		System.out.println("Your favorte color is: " + color);
@@ -93,31 +85,26 @@ public class FortuneTellerApp {
 		int siblings = input.nextInt();
 		String location = "nowhere";
 		System.out.println("You have " + siblings + " siblings.");
-		
+
 		if (siblings > 3) {
 			location = "Columbus, OH";
-			System.out.println("You have more than 3 siblings. " + location);
 		} else if (siblings > 2) {
 			location = "Cleveland, OH";
-			System.out.println("You have 3 siblings. " + location);
 		} else if (siblings > 1) {
 			location = "Cincinnati, OH";
-			System.out.println("You have 2 siblings. " + location);
 		} else if (siblings > 0) {
 			location = "Toledo, OH";
-			System.out.println("You only have 1 sibling. " + location);
 		} else if (siblings == 0) {
 			location = "Portland, OR";
-			System.out.println("You do not have any siblings. " + location);
 		} else {
 			location = "Saint Louis, MO";
-			System.out.println("invalid number - evil local. " + location);
 		}
 
-		System.out.println("You will retire in " + retirement + " years.");
-		System.out.println("You will have $" + accountAmount + " in your banking account.");
-
 		input.close();
+		System.out.println(nameFirst.substring(0, 1).toUpperCase() + nameFirst.substring(1) + " "
+				+ nameLast.substring(0, 1).toUpperCase() + nameLast.substring(1) + " will retire in " + retirement
+				+ " years with $" + accountAmount + " in the bank, a vacation home in " + location + ", and travel by "
+				+ transport + ".");
 		System.out.println("Goodbye, thanks for playing!");
 		System.exit(0);
 	}
