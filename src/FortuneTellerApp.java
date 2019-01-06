@@ -26,7 +26,6 @@ public class FortuneTellerApp {
 		} else {
 			retirement = 45;
 		}
-		// System.out.println("You are " + age);
 
 		System.out.println("Question two: What was your birth month? (1-12)");
 		int birthMonth = input.nextInt();
@@ -35,13 +34,10 @@ public class FortuneTellerApp {
 		if (birthMonth < 1) {
 			accountAmount = 0;
 		} else if (birthMonth < 5) {
-			// System.out.println("Jan. Feb. Mar. Apr.");
 			accountAmount = 300000000;
 		} else if (birthMonth < 9) {
-			// System.out.println("May Jun. Jul. Aug.");
 			accountAmount = 100000;
 		} else if (birthMonth < 13) {
-			// System.out.println("Sep. Oct. Nov. Dec.");
 			accountAmount = 90000;
 		} else {
 			// System.out.println("randome birthmonth text");
@@ -51,27 +47,44 @@ public class FortuneTellerApp {
 		System.out.println(
 				"Question three: What is your favorite color? \nanswer in a single letter out of ROYGBIV \n(Type 'help' for information on ROYGBIV)");
 		String color = input.next();
-		while (color.toLowerCase().equals("help")) {
-			System.out.println("found help");
-			System.out.println("R is red\nO is orange\nY is yellow\nG is green\nB is blue\nI is indigo\nV is violet");
-			System.out.println("So... what is your favorit color (ROYGBIV)?");
+		while (color.length() != 1) {
+			while (color.toLowerCase().equals("help")) {
+				System.out.println("found help");
+				System.out
+						.println("R is red\nO is orange\nY is yellow\nG is green\nB is blue\nI is indigo\nV is violet");
+				System.out.println("So... what is your favorit color (ROYGBIV)?");
+				color = input.next();
+			}
+			System.out.println("Please indicate a color using a single character.\nType help for valid colors.");
 			color = input.next();
 		}
 
+		String transport = "nothing";
+		
 		if (color.toLowerCase().equals("r")) {
-			System.out.println("Picked red.");
+			transport = "car";
+			System.out.println("Picked red. Drives a " + transport);
 		} else if (color.toLowerCase().equals("o")) {
-			System.out.println("Picked orange");
+			transport = "truck";
+			System.out.println("Picked orange. Drives a " + transport);
 		} else if (color.toLowerCase().equals("y")) {
-			System.out.println("Picked yellow");
+			transport = "bus";
+			System.out.println("Picked yellow. Drives a " + transport);
 		} else if (color.toLowerCase().equals("g")) {
-			System.out.println("Picked green");
+			transport = "magic carpet";
+			System.out.println("Picked green. Drives a " + transport);
 		} else if (color.toLowerCase().equals("b")) {
-			System.out.println("Picked blue");
+			transport = "dog slead";
+			System.out.println("Picked blue. Drives a " + transport);
 		} else if (color.toLowerCase().equals("i")) {
-			System.out.println("Picked indigo");
+			transport = "boat";
+			System.out.println("Picked indigo. Drives a " + transport);
 		} else if (color.toLowerCase().equals("v")) {
-			System.out.println("Picked violoet");
+			transport = "rocket"; 
+			System.out.println("Picked violoet. Drives a " + transport);
+		} else {
+			transport = "ruddy sneakers";
+			System.out.println("refused to pick a color. uses " + transport + "to get around.");
 		}
 
 		System.out.println("Your favorte color is: " + color);
