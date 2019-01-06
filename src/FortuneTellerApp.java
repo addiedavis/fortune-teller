@@ -91,7 +91,28 @@ public class FortuneTellerApp {
 
 		System.out.println("Question four: How many siblings do you have?");
 		int siblings = input.nextInt();
+		String location = "nowhere";
 		System.out.println("You have " + siblings + " siblings.");
+		
+		if (siblings > 3) {
+			location = "Columbus, OH";
+			System.out.println("You have more than 3 siblings. " + location);
+		} else if (siblings > 2) {
+			location = "Cleveland, OH";
+			System.out.println("You have 3 siblings. " + location);
+		} else if (siblings > 1) {
+			location = "Cincinnati, OH";
+			System.out.println("You have 2 siblings. " + location);
+		} else if (siblings > 0) {
+			location = "Toledo, OH";
+			System.out.println("You only have 1 sibling. " + location);
+		} else if (siblings == 0) {
+			location = "Portland, OR";
+			System.out.println("You do not have any siblings. " + location);
+		} else {
+			location = "Saint Louis, MO";
+			System.out.println("invalid number - evil local. " + location);
+		}
 
 		System.out.println("You will retire in " + retirement + " years.");
 		System.out.println("You will have $" + accountAmount + " in your banking account.");
