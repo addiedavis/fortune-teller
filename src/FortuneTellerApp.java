@@ -8,27 +8,58 @@ public class FortuneTellerApp {
 
 		Scanner input = new Scanner(System.in);
 
-		Thread.sleep(1000);
+		String regex = "[a-z]*";
+
+		Thread.sleep(500);
 		System.out.println("Hello, what is your first name?");
 		String nameFirst = input.next();
+		if (nameFirst.toLowerCase().equals("quit")) {
+			System.out.println("No one likes a quitter...");
+			System.exit(0);
+		}
 		System.out.println("Hello, what is your last name?");
 		String nameLast = input.next();
+		if (nameLast.toLowerCase().equals("quit")) {
+			System.out.println("No one likes a quitter...");
+			System.exit(0);
+		}
 		Thread.sleep(2000);
 		System.out.println("Answer my questions four and I will tell what you're in for.");
 		Thread.sleep(2000);
 
 		System.out.println("Question one: How old are you?");
-		int age = input.nextInt();
+		String howOld = input.next();
+
+		if (howOld.toLowerCase().matches(regex)) {
+			if (howOld.toLowerCase().equals("quit")) {
+				System.out.println("No one likes a quitter...");
+				System.exit(0);
+			}
+			while (howOld.toLowerCase().matches(regex)) {
+			System.out.println("Please enter a number.");
+			howOld = input.next();
+			}
+		}
+		int age = Integer.parseInt(howOld);
 
 		System.out.println("Question two: What was your birth month? (1-12)");
-		int birthMonth = input.nextInt();
+		String birthMonthString = input.next();
+		while (birthMonthString.toLowerCase().matches(regex)) {
+			if (birthMonthString.toLowerCase().equals("quit")) {
+			System.out.println("No one likes a quitter...");
+			System.exit(0);
+		}
+			System.out.println("Please enter a number 1-12.");
+			birthMonthString = input.next();
+		}
+		int birthMonth = Integer.parseInt(birthMonthString);
 
 		System.out.println(
 				"Question three: What is your favorite color? \nanswer in a single letter out of ROYGBIV \n(Type 'help' for information on ROYGBIV)");
 		String color = input.next();
 		while (color.length() != 1) {
 			while (color.toLowerCase().equals("help")) {
-				System.out.println("found help");
+				System.out.println("I found you some help.");
 				System.out
 						.println("R is red\nO is orange\nY is yellow\nG is green\nB is blue\nI is indigo\nV is violet");
 				System.out.println("So... what is your favorit color?");
@@ -39,10 +70,20 @@ public class FortuneTellerApp {
 		}
 
 		System.out.println("Question four: How many siblings do you have?");
-		int siblings = input.nextInt();
+		String siblingsString = input.next();
+		while (siblingsString.toLowerCase().matches(regex)) {
+			if (siblingsString.toLowerCase().equals("quit")) {
+				System.out.println("No one likes a quitter...");
+				System.exit(0);
+			}
+			System.out.println("Please enter a number.");
+			siblingsString = input.next();
+		}
+		int siblings = Integer.parseInt(siblingsString);
+		
 
 		input.close();
-		
+
 		int retirement = 0;
 		int accountAmount = 0;
 		String transport = "nothing";
@@ -57,7 +98,7 @@ public class FortuneTellerApp {
 		}
 
 		if (birthMonth < 1 || birthMonth > 12) {
-			//accountAmount = 0;
+			// accountAmount = 0;
 		} else if (birthMonth < 5) {
 			accountAmount = 300000000;
 		} else if (birthMonth < 9) {
