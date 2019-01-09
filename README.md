@@ -27,3 +27,9 @@ Your program should be able to process input whether a user enters capital or lo
 
 Give the user the ability to quit the program by typing “Quit” (should not be case sensitive) at any point where the program is looking for user input. The program should print “Nobody likes a quitter…” before ending.
 Research while (page 115 in the Head Start book) or do/while loops and use them to check whether a user typed “Help” for favorite color, printing the list of colors each time the user types “Help”.
+
+
+### Notes to Alan / grader / future me
+
+Please do not use alpha plus numeric characters for age/birth month/number of siblings, or any non-alphanumeric characters.
+I had issues trying to find a way to determine if the input has an alpha character, and I believe that that will be covered later so I ignored it for now. 
