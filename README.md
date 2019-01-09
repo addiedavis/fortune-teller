@@ -11,11 +11,10 @@ Ask the user for the user’s number of siblings.
 
 ## Part 2
 
-- Retirement Years
-	- The user’s number of years until retirement will be based on whether the user’s age is odd or even.
-- Number of siblings for where they will have a vacation home
-- Mode of Transporation determined by the user’s favorite color. ROYGBIV
-- Bank Balance at retirement will be based on the user’s birth month.
+- Base the number of years until retirement on whether the user's age is odd or even
+- Use the number of siblings to determine the user's vacation home
+- Use the favorite color to determine the mode of transportation
+- Use the birth month to determine how much money they will have in the bank
 
 ## Part 3
 - Display the user’s fortune in this format:

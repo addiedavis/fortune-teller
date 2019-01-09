@@ -9,46 +9,51 @@ public class FortuneTellerApp {
 		Scanner input = new Scanner(System.in);
 
 		String regex = "[a-z]*";
+		String numRegex   = "[0-9]*";
+
+		
+		Thread.sleep(2000);
+		System.out.println(
+				"Answer my questions and I will tell you your future.\nYou can quit any time by typing in \"quit\"");
+		Thread.sleep(2000);
 
 		Thread.sleep(500);
-		System.out.println("Hello, what is your first name?");
+		System.out.println("What is your first name?");
 		String nameFirst = input.next();
 		if (nameFirst.toLowerCase().equals("quit")) {
 			System.out.println("No one likes a quitter...");
 			System.exit(0);
 		}
-		System.out.println("Hello, what is your last name?");
+		System.out.println("And your last name?");
 		String nameLast = input.next();
 		if (nameLast.toLowerCase().equals("quit")) {
 			System.out.println("No one likes a quitter...");
 			System.exit(0);
 		}
-		Thread.sleep(2000);
-		System.out.println("Answer my questions four and I will tell what you're in for.");
-		Thread.sleep(2000);
 
 		System.out.println("Question one: How old are you?");
 		String howOld = input.next();
 
 		if (howOld.toLowerCase().matches(regex)) {
-			if (howOld.toLowerCase().equals("quit")) {
-				System.out.println("No one likes a quitter...");
-				System.exit(0);
-			}
-			while (howOld.toLowerCase().matches(regex)) {
-			System.out.println("Please enter a number.");
-			howOld = input.next();
+		while (howOld.toLowerCase().matches(regex)) {
+				if (howOld.toLowerCase().equals("quit")) {
+					System.out.println("No one likes a quitter...");
+					System.exit(0);
+				}
+				System.out.println("Please enter a number.");
+				howOld = input.next();
 			}
 		}
+		
 		int age = Integer.parseInt(howOld);
 
 		System.out.println("Question two: What was your birth month? (1-12)");
 		String birthMonthString = input.next();
 		while (birthMonthString.toLowerCase().matches(regex)) {
 			if (birthMonthString.toLowerCase().equals("quit")) {
-			System.out.println("No one likes a quitter...");
-			System.exit(0);
-		}
+				System.out.println("No one likes a quitter...");
+				System.exit(0);
+			}
 			System.out.println("Please enter a number 1-12.");
 			birthMonthString = input.next();
 		}
@@ -65,7 +70,8 @@ public class FortuneTellerApp {
 				System.out.println("So... what is your favorit color?");
 				color = input.next();
 			}
-			System.out.println("Please indicate a color using a single character.\nType help for valid colors.");
+			System.out.println(
+					"Please indicate a color using a single character.\nLike any in ROYGBIV\nType help for valid colors.");
 			color = input.next();
 		}
 
@@ -80,7 +86,6 @@ public class FortuneTellerApp {
 			siblingsString = input.next();
 		}
 		int siblings = Integer.parseInt(siblingsString);
-		
 
 		input.close();
 
